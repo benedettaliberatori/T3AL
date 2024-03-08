@@ -1,0 +1,18 @@
+_target_: src.models.tf_method_module.T3AL0Module
+
+split: 0
+dataset: thumos
+setting: 50
+video_path: 
+
+net:
+  _target_: src.models.components.tf_method.T3AL0Net
+  dataset: ${model.dataset}
+  split: ${model.split}
+  setting: ${model.setting}
+  kernel_size: 20
+  stride: 20
+  visualize: False
+  normalize: True
+  remove_background: True
+  video_path: ${model.video_path}
