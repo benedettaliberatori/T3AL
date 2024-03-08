@@ -1,19 +1,14 @@
 <div align="center">
 
-[![Paper]()]()
-
 # Test-Time Zero-Shot Temporal Action Localization
 
 Benedetta Liberatori, [Alessandro Conti](), [Paolo Rota](), [Yiming Wang](https://www.yimingwang.it/), [Elisa Ricci](http://elisaricci.eu/) <br>
 
 
 
-</div>
 
-<p align="center">
-  <img style="width: 100%" src="/media/method.pdf">
-</p>
-<br>
+<img src="media/method.png" alt="Paper" width="1200">
+
 
 > **Abstract:** **
 
