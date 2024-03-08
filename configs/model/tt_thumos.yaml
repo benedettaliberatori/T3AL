@@ -1,0 +1,35 @@
+_target_: src.models.tt_method_module.T3ALModule
+
+split: 0
+dataset: thumos
+setting: 50
+video_path: '/data/shared/bliberatori/'
+
+net:
+  _target_: src.models.components.tt_method.T3ALNet
+  dataset: ${model.dataset}
+  split: ${model.split}
+  setting: ${model.setting}
+  ltype: BYOLfeat
+  refine_with_captions: True
+  text_projection: True
+  text_encoder: False
+  image_projection: True
+  logit_scale: True
+  normalize: True
+  steps: 60
+  kernel_size: 20
+  stride: 20
+  randper: 10
+  p: 0.75
+  n: 4
+  remove_background: True
+  visualize: False  
+  video_path: ${model.video_path}
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true 
+  lr: 0.00001
+  weight_decay: 0.0001
+
