@@ -7,9 +7,7 @@ Benedetta Liberatori, [Alessandro Conti](), [Paolo Rota](), [Yiming Wang](https:
 <img src="media/method.png" alt="Paper" width="1200">
 <div align="left">
 
-> **Abstract:** 
-
-Zero-Shot Temporal Action Localization (ZS-TAL) seeks
+> **Abstract:** Zero-Shot Temporal Action Localization (ZS-TAL) seeks
 to identify and locate actions in untrimmed videos unseen
 during training. Existing ZS-TAL methods involve fine-
 tuning a model on a large amount of annotated training
@@ -67,6 +65,15 @@ We recommend to use pre-extracted CoCa features to accelerate inference. Please 
 
 ## Pre-extracted Features
 
+
+Then add the paths in the config files `config/<dataset_name>.yaml`, for example as: 
+
+```
+training:
+  feature_path: '/path/to/Thumos14/features/'
+  video_path: '/path/to/Thumos14/videos/'
+```
+
 # Evaluation
 
 The method can be evaluated on the `dataset` of interest and selecting the `split` and `setting`, by running the following bash script:
@@ -82,5 +89,5 @@ We provide config files for the main method `tt_<dataset_name>`, the training fr
 Please consider citing our paper in your publications if the project helps your research.
 
 ```
-bibtex
+
 ```
