@@ -3,7 +3,7 @@ _target_: src.models.tt_method_module.T3ALModule
 split: 0
 dataset: thumos
 setting: 50
-video_path: '/data/shared/bliberatori/'
+video_path: 
 
 net:
   _target_: src.models.components.tt_method.T3ALNet
