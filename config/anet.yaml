@@ -1,0 +1,19 @@
+dataset:
+  name: 'anet'
+  num_classes: 200
+  split: 50
+  training:
+    video_info_path: "./data/activitynet_annotations/video_info_new.csv"
+    video_anno_path: "./data/activitynet_annotations/anet_anno_action.json"
+  testing:
+    video_info_path: "./data/activitynet_annotations/video_info_new.csv"
+    video_anno_path: "./data/activitynet_annotations/anet_anno_action.json"
+
+
+training:
+  feature_path: 
+  video_path: 
+  from_features: True
+  baseline: True
+  oracle: False
+  extract: False
