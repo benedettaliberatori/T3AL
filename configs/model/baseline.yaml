@@ -1,0 +1,15 @@
+_target_: src.models.baseline_module.BaselineModule
+
+split: 0
+dataset: thumos
+setting: 50
+video_path: 
+
+net:
+  _target_: src.models.components.baselines.BaselineNet
+  dataset: ${model.dataset}
+  split: ${model.split}
+  setting: ${model.setting}
+  model_name: coca
+  p: 0.8
+  video_path: ${model.video_path}

@@ -1,0 +1,32 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /data: default.yaml
+  - override /model: baseline.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: gpu.yaml
+  - override /logger: wandb.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+seed: 12345
+exp_name: baseline
+
+trainer:
+  max_epochs: 0
+
+
+logger:
+  wandb:
+    name: ${exp_name}
+
+
+callbacks:
+  model_checkpoint:
+    monitor: null
+    save_last: True
+    auto_insert_metric_name: False
