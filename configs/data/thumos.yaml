@@ -1,0 +1,6 @@
+_target_: src.data.custom_datamodule.T3ALDataModule
+batch_size: 1
+num_workers: 1
+pin_memory: False
+nsplit: 0
+config: "./config/thumos.yaml"
