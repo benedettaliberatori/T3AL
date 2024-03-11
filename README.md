@@ -66,6 +66,14 @@ We recommend to use pre-extracted CoCa features to accelerate inference. Please 
 ## Pre-extracted Features
 
 
+|   Dataset    |                                                 Link                                                  |
+| :----------: | :---------------------------------------------------------------------------------------------------: |
+| THUMOS14   | [Google Drive](https://drive.google.com/file/d/1SARGjmIZElUvPi2KTXurCtUkXNR_VraI/view?usp=sharing) |
+|  ActivityNet-v1.3  | [Google Drive]() |
+|
+
+
+
 Then add the paths in the config files `config/<dataset_name>.yaml`, for example as: 
 
 ```
