@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Test-Time Zero-Shot Temporal Action Localization</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+
+<body>
+
+
+  <style>
+    .author-block {
+      margin-right: 10px;
+      /* Adjust the value as per your preference */
+    }
+  </style>
+
+  <style>
+    /* Custom CSS for tooltip */
+    .custom-tooltip .tooltip-inner {
+      background-color: #f1f1f1;
+      color: #333333;
+    }
+
+    .custom-tooltip .tooltip.bs-tooltip-top .arrow::before {
+      border-top-color: #f1f1f1;
+    }
+  </style>
+
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Test-Time Zero-Shot Temporal Action Localization</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  </section>
+
+
+
+
+  <!-- Video description-->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <h2 class="title is-3">Qualitative Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            In each of the following illustrations we show a video from THUMOS14 and
+            the prediction of our proposed method <span class="tex">\(T^3AL\)</span>.
+            The visual representation includes ground truth and predicted classes,
+            as well as the similarity with the pseudo-label. In the similarity plot,
+            temporal ground truth action intervals are highlighted in green,
+            predicted action proposals in blue, and <strong>overlapping
+              areas</strong> are indicated by <strong>parallel diagonal lines</strong>. The red slider
+            visually represents the progression of time within the video.
+            Videos are better seen in full screen.
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Video description -->
+
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_validation_0000852.mp4" type="video/mp4">
+        </video>
+
+        The predicted class correspods to the ground truth class. The model
+        discriminates between regions in the video with the penalty
+        kick and regions with other actions related to the game of soccer,
+        such as players running or walking on the field and soccer passes.
+        The three false positive regions predicted contain the preparation
+        for the penalty kick and thus are very similar visually to the
+        ground truth action.
+
+
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_test_0000673.mp4" type="video/mp4">
+        </video>
+          The predicted class corresponds to the ground truth class and the predicted
+          regions are aligned with the ground truth ones most of the time. There are
+          two false positive regions predicted, containing a man jumping on the diving board,
+          and one prediction significantly bigger than the corresponding ground truth region,
+          depicting a man doing an handstand on the diving board. In both cases, we can see
+          why the model wrongly assigns relatively high scores to these predictions, as the scenes
+          share visual similarities with the ground truth.
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Teaser video-->
+  <section class="hero teaser ">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_validation_0000949.mp4" type="video/mp4">
+        </video>
+          In this example, the ground truth class is misclassified, the model
+          predict the action of throwing an hammer instead of a discus. 
+          Moreover, the model predicts two false positive regions, confused by the
+          fact that the scene is similar to the one of the ground truth action.
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Teaser video-->
+  <section class="hero teaser is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_validation_0000940.mp4" type="video/mp4">
+        </video>
+          In this example the predicted class is correct while
+          there is less overlap between the ground truth and the predicted
+          regions. Upon closer inspection of the video, it becomes apparent
+          that the model detects the action in frames where a
+          player is practicing a tennis swing with an elastic band.
+          These frames have not been included in the ground truth regions
+          by annotators, yet it can be argued that they contain elements of the action class in question.
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser ">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_test_0000946.mp4" type="video/mp4">
+        </video>
+          The ground truth class is classified and the two occurrencies
+          of it are detected. The model predicts a false positive region and wrongly 
+          considers the aftermath of the action as part of the action itself.
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_validation_0000059.mp4" type="video/mp4">
+        </video>
+          In this example, the predicted class corresponds to the ground truth class.
+          The model predicts a region proposal for each one of the occurrences of the action,
+          yet the predicted regions are longer than the ground truth ones. This can be
+          attributed to the fact that the class name encompasses
+          a wide range of actions associates with the billiard game.
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Teaser video-->
+  <section class="hero teaser ">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_validation_0000265.mp4" type="video/mp4">
+        </video>
+          The ground truth class is classified and for the most of the video
+          there is overlap between the ground truth and the predicted regions.
+          The model misses a big part of the last occurrence of the action. Upon closer
+          inspection of the video, it can be seen that it predicts a low similarity with the pseudo-label as the
+          scene contains a man that is running.
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Teaser video-->
+  <section class="hero teaser is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_test_0000026.mp4" type="video/mp4">
+        </video>
+
+        The predicted class corresponds to the ground truth one. The model is able to detect
+        large areas where the action takes place, yet it wrongly aggregates multiple regions into five single
+        ones. This can be attributed to the fact that there is a subtle difference between a tennis
+        swing and the preparation or the aftermath of it.
+
+
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Teaser video-->
+  <section class="hero teaser ">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_validation_0000156.mp4" type="video/mp4">
+        </video>
+          In this example, the action is classified but the similarity
+          with it is high over the whole video and the model predicts many false
+          positive regions. This can be attributed to the fact that there are
+          different moments in the video when the action is partially performed.
+          For instance, there are instances when only the clean is performed without
+          the full clean and jerk, or when the individual is unable to lift the barbell entirely.
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="videos/video_validation_0000986.mp4" type="video/mp4">
+        </video>
+          The action is classified, and all the ground truth instances are detected.
+          All predicted regions are longer than the ground truth ones because the model considers the aftermath
+          of the action as part of the action itself.
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+
+
+  <footer class="footer" style="font-size: smaller;">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- Statcounter tracking code -->
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
