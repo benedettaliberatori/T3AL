@@ -71,21 +71,156 @@
   </style>
 
 
+  </section>
 
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Test-Time Zero-Shot Temporal Action Localization</h1>
+            <h1 class="title is-1 publication-title"><b style="font-size: 64px;">
+              T3AL
+              <img src="static/images/duck.jpg" alt="Icon" style="width: 100px; vertical-align: middle;">
+            </b></h1>
+            <h1 class="title is-1 publication-title publication-title-single-line">Test-Time Zero-Shot Temporal Action Localization</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Benedetta Liberatori</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://alessandroconti.me/" target="_blank">Alessandro Conti</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://paolorota.github.io/" target="_blank">Paolo Rota</a><sup>1</sup>,
+              <span class="author-block">
+                <a href="https://www.yimingwang.it/" target="_blank">Yiming Wang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://elisaricci.eu/" target="_blank">Elisa Ricci</a><sup>1,2</sup>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block" style="margin-left: 10px;"></span><sup>1</sup></span> University of Trento
+              <span class="author-block" style="margin-left: 10px;"></span><sup>2</sup></span> Fondazione Bruno Kessler
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                   <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+            <!-- Github link -->
+            <span class="link-block">
+              <a href="https://github.com/benedettaliberatori/T3AL" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+
+            <!-- ArXiv abstract Link -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+
           </div>
         </div>
       </div>
     </div>
   </section>
 
+<!--
+  <div class="image-column">
+    <div class="image-container">
+        <img src="static/images/teaser-v5a-1.png" alt="Image 1" width="40%">
+        <div class="caption">(a) Previous approaches</div>
+    </div>
+    <div class="image-container">
+        <img src="static/images/teaser-v5b-1.png" alt="Image 2" width="40%">
+        <div class="caption">(b) Our proposal</div>
+    </div>
+</div>
+-->
 
-  </section>
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+              Zero-Shot Temporal Action Localization (ZS-TAL) seeks to identify and 
+              locate actions in untrimmed videos unseen during training. Existing 
+              ZS-TAL methods involve fine-tuning a model on a large amount of annotated 
+              training data. While effective, training-based ZS-TAL approaches assume 
+              the availability of labeled data for supervised learning, which can be 
+              impractical in some applications. Furthermore, the training process 
+              naturally induces a domain bias into the learned model, which may 
+              adversely affect the model's generalization ability to arbitrary videos. 
+              These considerations prompt us to approach the ZS-TAL problem from a 
+              radically novel perspective, relaxing the requirement for training data. 
+              To this aim, we introduce a novel method that performs Test-Time adaptation 
+              for Temporal Action Localization (<em>T3AL</em>). In a nutshell, <em>T3AL</em>
+              adapts a pre-trained Vision and Language Model (VLM) at inference time on 
+              a sample basis. <em>T3AL</em> operates in three steps. First, a 
+              video-level pseudo-label of the action category is computed by 
+              aggregating information from the entire video. Then, action localization
+              is performed adopting a novel procedure inspired by self-supervised learning. 
+              Finally, frame-level textual descriptions extracted with a state-of-the-art 
+              captioning model are employed for refining the action region proposals.
+              We validate the effectiveness of by conducting experiments on the THUMOS14 
+              and the ActivityNet-v1.3 datasets. Our results demonstrate that significantly 
+              outperforms zero-shot baselines based on state-of-the-art VLMs, confirming 
+              the benefit of a test-time adaptation approach.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h2 class="title is-3">Method Overview</h2>
+          <img src="static/images/method-v7-1.png" alt="Banner Image" height="100%">
+          <h2 class="subtitle has-text-justified" style="line-height: 1.6;">
+            <b>Illustration of our proposed framework.</b> 
+            <em>T3AL</em> addresses the task of ZS-TAL by only 
+            learning at test-time on unlabelled data.
+            We first compare the average visual frames with the 
+            textual class names to identify the video pseudo-label  <img src="static/images/icon_star-1.png" alt="Icon" style="width: 30px; vertical-align: middle;">. 
+            We then refine the visual frames - video pseudo-label 
+            scores with self-supervision. Last, we exploit the decoder 
+            of a captioning model to generate captions and perform 
+            text-guided region suppression. We only <img src="static/images/icon_fire-1.png" alt="Icon" style="width: 25px; vertical-align: middle;"> fine-tune the 
+            vision and language projectors, while keeping the encoders <img src="static/images/icon_ice-1.png" alt="Icon" style="width: 25px; vertical-align: middle;">
+            frozen. Once the prediction is obtained, the optimized parameters
+            are re-initialized to the ones of the VL pre-trained model.
+          </h2>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -96,7 +231,7 @@
       <div class="hero-body">
 
         <h2 class="title is-3">Qualitative Results</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-justified" style="line-height: 1.6;">
           <p>
             In each of the following illustrations we show a video from THUMOS14 and
             the prediction of our proposed method <span class="tex">\(T^3AL\)</span>.
