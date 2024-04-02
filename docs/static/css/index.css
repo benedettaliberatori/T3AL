@@ -32,6 +32,7 @@ body {
 
 
 .publication-title {
+
 }
 
 .publication-banner {
@@ -176,3 +177,33 @@ body {
 }
 
 
+.image-column {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+
+.image-container {
+  position: relative;
+  width: 25%;
+  margin-bottom: 50px; /* Add some space between images */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  position: absolute;
+  bottom: -30px; /* Align the caption to the bottom */
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.publication-title-single-line {
+  white-space: nowrap; /* Prevent line breaks */
+}
