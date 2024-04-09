@@ -1,5 +1,8 @@
 <div align="center">
 
+[![Paper](https://img.shields.io/badge/paper-arxiv.2310.02835-B31B1B.svg)](https://arxiv.org/abs/2404.05426)
+[![Project page](https://img.shields.io/badge/website-T3AL-4285F4.svg)](https://benedettaliberatori.github.io/T3AL/)
+
 # Test-Time Zero-Shot Temporal Action Localization
 
 Benedetta Liberatori, [Alessandro Conti](), [Paolo Rota](), [Yiming Wang](https://www.yimingwang.it/), [Elisa Ricci](http://elisaricci.eu/) <br>
