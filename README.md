@@ -72,8 +72,7 @@ We recommend to use pre-extracted CoCa features to accelerate inference. Please 
 |   Dataset    |                                                 Link                                                  |
 | :----------: | :---------------------------------------------------------------------------------------------------: |
 | THUMOS14   | [Google Drive](https://drive.google.com/file/d/1SARGjmIZElUvPi2KTXurCtUkXNR_VraI/view?usp=sharing) |
-|  ActivityNet-v1.3  | [Google Drive]() |
-|
+|  ActivityNet-v1.3  | [Google Drive](https://drive.google.com/drive/folders/10L2iapJO-59MMPHb-Hx9Gw6F9Dpbk_Br?usp=sharing) |
 
 
 
