@@ -192,7 +192,6 @@ class T3AL0Net(nn.Module):
         video_extensions = [".mp4", ".mkv", ".webm"]
         for ext in video_extensions:
             video_path = os.path.join(self.video_dir, video_name + ext)
-
             if os.path.exists(video_path):
                 fps = cv2.VideoCapture(video_path).get(cv2.CAP_PROP_FPS)
                 break
@@ -203,6 +202,8 @@ class T3AL0Net(nn.Module):
     def forward(self, x):
         idx, video_name, image_features = x
         video_name = video_name[0]
+        with torch.no_grad():
+            image_features = image_features @ self.model.visual.proj
         image_features = image_features.squeeze(0)
         indexes = self.infer_pseudo_labels(image_features)
         class_label = self.inverted_cls[indexes.item()]
