@@ -64,15 +64,17 @@ pip install -r requirements.txt
 
 
 # Preparing Datasets
-We recommend to use pre-extracted CoCa features to accelerate inference. Please download the extracted features for THUMOS14 and ActivityNet datasets from links below: 
+We recommend to use pre-extracted CoCa features to accelerate inference. Please download the extracted features for THUMOS14 and ActivityNet-v1.3 datasets from links below. 
+
+In the same folder, you will find captions generated with CoCa. Given the size of the datasets, we generated caption at 10 fps for THUMOS14 and 1 fps for ActivityNet-v1.3. 
 
 ## Pre-extracted Features
 
 
-|   Dataset    |                                                 Link                                                  |
-| :----------: | :---------------------------------------------------------------------------------------------------: |
-| THUMOS14   | [Google Drive](https://drive.google.com/file/d/1SARGjmIZElUvPi2KTXurCtUkXNR_VraI/view?usp=sharing) |
-|  ActivityNet-v1.3  | [Google Drive](https://drive.google.com/drive/folders/10L2iapJO-59MMPHb-Hx9Gw6F9Dpbk_Br?usp=sharing) |
+|   Dataset    |                                                 Link                                                  |    Captions    |
+| :----------: | :---------------------------------------------------------------------------------------------------: |     :----------:    | 
+| THUMOS14   | [Google Drive](https://drive.google.com/file/d/1SARGjmIZElUvPi2KTXurCtUkXNR_VraI/view?usp=sharing) |        [Google Drive](https://drive.google.com/file/d/1zRCvqkMYjLYKPGv1mWw4zA6Ng-hYUI5e/view?usp=sharing)                 |
+|  ActivityNet-v1.3  | [Google Drive](https://drive.google.com/drive/folders/10L2iapJO-59MMPHb-Hx9Gw6F9Dpbk_Br?usp=sharing) |   [Google Drive](https://drive.google.com/file/d/14Tk3ISD8t2pTOMrd8sbDRiYTRrXnL3iZ/view?usp=sharing)  |
 
 
 
