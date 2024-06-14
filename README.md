@@ -101,5 +101,12 @@ We provide config files for the main method `tt_<dataset_name>`, the training fr
 Please consider citing our paper in your publications if the project helps your research.
 
 ```
-
+@InProceedings{Liberatori_2024_CVPR,
+    author    = {Liberatori, Benedetta and Conti, Alessandro and Rota, Paolo and Wang, Yiming and Ricci, Elisa},
+    title     = {Test-Time Zero-Shot Temporal Action Localization},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {18720-18729}
+}
 ```
