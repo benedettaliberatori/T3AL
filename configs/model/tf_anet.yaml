@@ -1,0 +1,20 @@
+_target_: src.models.tf_method_module.T3AL0Module
+
+split: 0
+dataset: anet
+setting: 50
+video_path:
+
+net:
+  _target_: src.models.components.tf_method.T3AL0Net
+  dataset: ${model.dataset}
+  split: ${model.split}
+  setting: ${model.setting}
+  kernel_size: 40
+  stride: 150
+  visualize: False
+  normalize: True
+  remove_background: False
+  video_path: ${model.video_path}
+
+
