@@ -7,9 +7,9 @@ video_path:
 
 net:
   _target_: src.models.components.tt_method.T3ALNet
-  dataset: ${dataset}
-  split: ${split}
-  setting: ${setting}
+  dataset: ${model.dataset}
+  split: ${model.split}
+  setting: ${model.setting}
   ltype: BYOLfeat
   refine_with_captions: True
   text_projection: True
