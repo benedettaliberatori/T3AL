@@ -38,6 +38,7 @@ class T3AL0Net(nn.Module):
         self.visualize = visualize
         self.remove_background = remove_background
         self.topk = 3
+        self.m = 0.7
         self.split = split
         self.setting = setting
         self.video_path = video_path
@@ -169,7 +170,12 @@ class T3AL0Net(nn.Module):
             )
 
     def select_segments(self, similarity):
-        mask = similarity > similarity.mean()
+        if self.dataset == 'thumos':
+            mask = similarity > similarity.mean()
+        elif self.dataset == 'anet': 
+            mask = similarity > self.m
+        else:
+            raise ValueError(f"Not implemented dataset: {self.dataset}")
         selected = torch.nonzero(mask).squeeze()
         segments = []
         if selected.numel() and selected.dim() > 0:
@@ -220,8 +226,8 @@ class T3AL0Net(nn.Module):
             self.model.logit_scale.exp() * pseudolabel_feature @ image_features_norm.T
         )
 
-        
-        similarity = self.moving_average(similarity, self.kernel_size).squeeze()
+        if self.dataset == "thumos":
+            similarity = self.moving_average(similarity, self.kernel_size).squeeze()
         if self.normalize:
             similarity = (similarity - similarity.min()) / (
                 similarity.max() - similarity.min()

@@ -13,7 +13,7 @@ net:
   kernel_size: 40
   stride: 150
   visualize: False
-  normalize: True
+  normalize: False
   remove_background: False
   video_path: ${model.video_path}
 

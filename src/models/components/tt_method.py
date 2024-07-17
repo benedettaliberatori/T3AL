@@ -58,6 +58,7 @@ class T3ALNet(nn.Module):
         self.kernel_size = kernel_size
         self.video_path = video_path
         self.topk = 3
+        self.m = 0.7
 
         self.model, _, _ = open_clip.create_model_and_transforms(
             model_name="coca_ViT-L-14", pretrained="mscoco_finetuned_laion2B-s13B-b90k"
@@ -126,7 +127,13 @@ class T3ALNet(nn.Module):
 
     def select_segments(self, similarity):
         
-        mask = similarity > similarity.mean()
+        if self.dataset == "thumos":
+            mask = similarity > similarity.mean()
+        elif self.dataset == "anet":
+            mask = similarity > self.m
+        else:
+            raise ValueError(f"Not implemented dataset: {self.dataset}")
+        
         selected = torch.nonzero(mask).squeeze()
         segments = []
         if selected.numel() and selected.dim() > 0:
@@ -334,9 +341,11 @@ class T3ALNet(nn.Module):
             
             features = image_features - self.background_embedding if self.remove_background else image_features
             similarity = self.model.logit_scale.exp() * tta_emb @ features.T
-            similarity = self.moving_average(
-                similarity.squeeze(), self.kernel_size
-            ).unsqueeze(0)
+            
+            if self.dataset == "thumos":
+                similarity = self.moving_average(
+                    similarity.squeeze(), self.kernel_size
+                ).unsqueeze(0)
             
             pindices, nindices = self.get_indices(similarity)
             image_features_p, image_features_n = image_features[pindices], image_features[nindices]
@@ -400,7 +409,9 @@ class T3ALNet(nn.Module):
                 dim=-1, keepdim=True
             )
             similarity = self.model.logit_scale.exp() * tta_emb @ image_features_norm.T
-            similarity = self.moving_average(similarity.squeeze(), self.kernel_size)
+            
+            if self.dataset == "thumos":
+                similarity = self.moving_average(similarity.squeeze(), self.kernel_size)
             if self.normalize:
                 similarity = (similarity - similarity.min()) / (
                     similarity.max() - similarity.min()

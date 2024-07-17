@@ -3,7 +3,7 @@ _target_: src.models.tt_method_module.T3ALModule
 split: 0
 dataset: anet
 setting: 50
-video_path: 
+video_path:
 
 net:
   _target_: src.models.components.tt_method.T3ALNet
@@ -17,7 +17,7 @@ net:
   image_projection: True
   logit_scale: True
   normalize: False
-  steps: 25
+  steps: 15
   kernel_size: 50
   stride: 200
   randper: 10
