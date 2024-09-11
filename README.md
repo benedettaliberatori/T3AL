@@ -5,7 +5,7 @@
 
 # Test-Time Zero-Shot Temporal Action Localization
 
-Benedetta Liberatori, [Alessandro Conti](), [Paolo Rota](), [Yiming Wang](https://www.yimingwang.it/), [Elisa Ricci](http://elisaricci.eu/) <br>
+[Benedetta Liberatori](https://benedettaliberatori.github.io/), [Alessandro Conti](https://alessandroconti.me/), [Paolo Rota](https://paolorota.github.io/), [Yiming Wang](https://www.yimingwang.it/), [Elisa Ricci](http://elisaricci.eu/) <br>
 
 <img src="media/method.png" alt="Paper" width="1200">
 <div align="left">
